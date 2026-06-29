@@ -43,8 +43,11 @@
   function iconForPlace(place) {
     return L.divIcon({
       className: "route-pin",
-      html: `<span class="pin-body"><span>${place.id}</span></span>`,
-      iconSize: [40, 52],
+      html: `
+        <span class="pin-body"><span>${place.id}</span></span>
+        <span class="pin-label"><span class="pin-label-text">${place.short}</span></span>
+      `,
+      iconSize: [220, 56],
       iconAnchor: [20, 50],
       popupAnchor: [0, -48],
     });
