@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ujjain Route Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="route-app">
+      <section class="map-shell" aria-label="Interactive Ujjain route map">
+        <div id="map"></div>
+
+        <header class="map-toolbar">
+          <div class="route-title">
+            <span class="title-mark"><i data-lucide="route"></i></span>
+            <div>
+              <h1>Ujjain Route</h1>
+              <p>7 stops · temple circuit</p>
+            </div>
+          </div>
+          <nav class="toolbar-actions" aria-label="Map actions">
+            <a id="fullRouteLink" class="action primary" target="_blank" rel="noreferrer">
+              <i data-lucide="navigation"></i>
+              <span>Open Full Route</span>
+            </a>
+            <button id="locateBtn" class="icon-action" type="button" title="Show my location" aria-label="Show my location">
+              <i data-lucide="crosshair"></i>
+            </button>
+            <button id="resetBtn" class="icon-action" type="button" title="Reset map" aria-label="Reset map">
+              <i data-lucide="rotate-ccw"></i>
+            </button>
+          </nav>
+        </header>
+
+        <div id="locationStatus" class="location-status" aria-live="polite"></div>
+      </section>
+
+      <aside class="route-panel" aria-label="Route details">
+        <div class="panel-header">
+          <p class="eyebrow">Follow point by point</p>
+          <h2>Stops & Directions</h2>
+        </div>
+
+        <section class="stop-strip" id="stopStrip" aria-label="Route stops"></section>
+
+        <section class="panel-section">
+          <div class="section-title">
+            <i data-lucide="map-pinned"></i>
+            <h3>Locations</h3>
+          </div>
+          <div class="stop-list" id="stopList"></div>
+        </section>
+
+        <section class="panel-section">
+          <div class="section-title">
+            <i data-lucide="milestone"></i>
+            <h3>Directions</h3>
+          </div>
+          <div class="leg-list" id="legList"></div>
+        </section>
+
+        <footer class="panel-footer">
+          <span>Map: OpenStreetMap/CARTO</span>
+          <span>Routes: OSRM</span>
+          <span>Live navigation: Google Maps</span>
+        </footer>
+      </aside>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./route-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
